@@ -1,0 +1,17 @@
+@using Microsoft.AspNetCore.Identity
+@using MVC.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    //exibir aqui o usuário logado hello @usermanager.getusername(user)!
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Cadastrar</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login">Entrar</a></li>
+    </ul>
+}
